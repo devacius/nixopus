@@ -122,7 +122,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
                 <FormItem>
                   <FormLabel>{t('auth.resetPassword.confirmPassword')}</FormLabel>
                   <FormControl>
-                    <Input
+                    <PasswordInputField
                       type="password"
                       placeholder={t('auth.resetPassword.confirmPassword')}
                       {...field}

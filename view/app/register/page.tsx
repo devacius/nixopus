@@ -12,6 +12,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useRouter } from 'next/navigation';
 import { LogIn } from 'lucide-react';
 import Link from 'next/link';
+import { PasswordInputField } from '@/components/ui/password-input-field';
 
 export default function RegisterPage() {
   const { t } = useTranslation();
@@ -76,11 +77,12 @@ export default function RegisterPage() {
                     </div>
                     <div className="grid gap-3">
                       <Label htmlFor="confirmPassword">{t('auth.register.confirmPassword')}</Label>
-                      <Input
+                      <PasswordInputField                       
                         id="confirmPassword"
                         type="password"
                         {...form.register('confirmPassword')}
                       />
+
                       {form.formState.errors.confirmPassword && (
                         <p className="text-sm text-destructive">
                           {form.formState.errors.confirmPassword.message}

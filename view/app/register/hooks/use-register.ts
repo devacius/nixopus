@@ -15,7 +15,7 @@ const registerSchema = (t: (key: string) => string) =>
         .min(8, t('auth.register.errors.passwordRequirements.minLength'))
         .regex(/[A-Z]/, t('auth.register.errors.passwordRequirements.uppercase'))
         .regex(/[a-z]/, t('auth.register.errors.passwordRequirements.lowercase'))
-        .regex(/[0-9]/, t('auth.register.errors.passwordRequirements.number'))
+        .regex(/[0-9]/, t('auth.register.errors.passwordRequirements.number'))  
         .regex(
           /[!@#$%^&*(),.?":{}|<>]/,
           t('auth.register.errors.passwordRequirements.specialChar')
@@ -45,7 +45,9 @@ function useRegister() {
       email: '',
       password: '',
       confirmPassword: ''
-    }
+    },
+    mode:"all",
+    reValidateMode:'onChange'
   });
 
   const onSubmit = async (data: RegisterForm) => {

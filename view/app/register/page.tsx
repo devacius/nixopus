@@ -36,7 +36,6 @@ export default function RegisterPage() {
   if (isAdminRegistered) {
     return <AdminRegistered />;
   }
-
   return (
     <div className="flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm md:max-w-3xl">
@@ -61,16 +60,16 @@ export default function RegisterPage() {
                         {...form.register('email')}
                       />
                       {form.formState.errors.email && (
-                        <p className="text-sm text-destructive">
+                        <p className="text-sm text-red-500">
                           {form.formState.errors.email.message}
                         </p>
                       )}
                     </div>
                     <div className="grid gap-3">
                       <Label htmlFor="password">{t('auth.password')}</Label>
-                      <PasswordInputField id="password" type="password" {...form.register('password')} />
+                      <PasswordInputField id="password"  {...form.register('password')} />
                       {form.formState.errors.password && (
-                        <p className="text-sm text-destructive">
+                        <p className="text-sm text-red-500">
                           {form.formState.errors.password.message}
                         </p>
                       )}
@@ -79,12 +78,12 @@ export default function RegisterPage() {
                       <Label htmlFor="confirmPassword">{t('auth.register.confirmPassword')}</Label>
                       <PasswordInputField                       
                         id="confirmPassword"
-                        type="password"
+                        
                         {...form.register('confirmPassword')}
                       />
 
                       {form.formState.errors.confirmPassword && (
-                        <p className="text-sm text-destructive">
+                        <p className="text-sm text-red-500">
                           {form.formState.errors.confirmPassword.message}
                         </p>
                       )}

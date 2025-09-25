@@ -234,7 +234,6 @@ const ChannelTab: React.FC<ChannelTabProps> = ({
                       </FormLabel>
                       <FormControl>
                         <PasswordInputField
-                          type="password"
                           {...field}
                           placeholder={t(
                             'settings.notifications.channels.email.fields.smtp_password.placeholder'
